@@ -1,0 +1,20 @@
+.menuitem {
+	background: none;
+	border: none;
+	transition: all .3s;
+}
+
+.image {
+	cursor: pointer;
+	transition: all .3s;
+}
+
+.menuitem .image:hover {
+	transform: scale(1.1);
+}
+
+.menuitem:focus {
+	outline: none; 
+}
+
+

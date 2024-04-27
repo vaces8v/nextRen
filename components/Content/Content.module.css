@@ -1,0 +1,188 @@
+.main {
+  display: flex;
+	flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+	min-width: 100vw;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+	min-height: 100vh;	
+	background: none;
+}
+
+.wrapperContent {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	min-width: 660px;
+	height: 100%;
+	flex-shrink: 0;
+}
+
+.backgroundContent {
+	display: flex;
+	flex-shrink: 0;
+	justify-content: center;
+	background-color: #d9d9d92a;
+	border-radius: 35px;
+	height: 80vh;
+	width: 1200px;
+	min-width: 678px;
+	max-width: 1200px	;
+	overflow: hidden;
+}
+
+.scrollBlock {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	min-width: 80%;
+	width: 98%;
+	height: 92%;
+	overflow: auto;
+	overflow-x: hidden;
+	background-color: none;
+}
+
+.scrollBlock::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+.scrollBlock::-webkit-scrollbar-track {
+  background-color: transparent; 
+}
+
+
+.scrollBlock::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+  background-color: rgba(196, 193, 193, 0.63); 
+}
+
+.backgroundContent::-webkit-scrollbar-thumb {
+	display: none;
+}
+
+.sectRight {
+	display: flex;
+	justify-content: space-between;
+}
+
+.sectLeft {
+	margin-right: 9px;
+}
+
+.blocksHeader {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.badConnect {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	height: 50vh;
+}
+
+.badConnect p {
+	font-size: 32px;
+}
+
+
+@media (max-width: 1320px) {
+.backgroundContent {
+		height: 80vh;
+		min-width: 678px;
+		max-width: 1000px;
+		overflow: hidden;
+	}
+}
+
+@media (max-width: 1120px) {
+	.backgroundContent {
+		height: 80vh;
+		min-width: 678px;
+		max-width: 800px;
+		overflow: hidden;
+	}
+}
+
+@media (max-width: 900px) {
+	.backgroundContent {
+		height: 100vh;
+		min-width: 100vw;
+		max-width: 100vw;
+	}
+
+	.wrapper {
+		min-height: 100vh;
+		min-width: 100vw;
+	}
+
+	.backgroundContent {
+		height: 100vh;
+	}
+
+	.scrollBlock {
+		min-width: 80%;
+		height: 86vh;
+	}
+}
+
+@media (max-width: 766px) {
+	.scrollBlock {
+		margin-top: 5px;
+		margin-bottom: 10px;
+	}
+	.blocksHeader {
+		width: 100vw;
+	}
+	.scrollBlock {
+		width: 100%;
+	}
+	.scrollBlock::-webkit-scrollbar-thumb {
+		background-color: rgba(196, 193, 193, 0);
+	}
+	.scrollBlock::-webkit-scrollbar {
+		width: 0px;
+	}
+}
+
+@media (max-width: 610px) {
+	.backgroundContent {
+		margin-top: 0px;
+	}
+}
+
+
+@media (max-width: 350px) {
+	.backgroundContent {
+		height: 100vh;
+		min-width: 100vw;
+		max-width: 100vw;
+	}
+
+	.wrapper {
+		min-height: 100vh;
+		min-width: 100vw;
+	}
+
+	.backgroundContent {
+		height: 100vh;
+	}
+
+	.scrollBlock {
+		min-width: 80%;
+		height: 76vh;
+	}
+}

@@ -1,0 +1,160 @@
+.input {
+	color: #fff;
+	background-color: #d9d9d92a;
+	border-radius: 5px;
+	border: none;
+	padding: 5px 10px;
+}
+
+.input:focus {
+		outline: 2px solid #ffd000;
+		outline-offset: 1px;
+}
+
+.date {
+	color: #000;
+}
+
+.submit {
+	cursor: pointer;
+	align-self: center;
+	font-size: 'Poppins', sans-serif;
+	color: #fff;
+	font-size: 24px;
+	background-color: lime;
+	border-radius: 5px;
+	border: none;
+	padding: 10px 15px;
+	margin-right: 10px;
+	transition: all .3s;
+}
+
+.submit:active {
+	transform: scale(0.95);
+}
+
+.title {
+	font-size: 32px;
+}
+
+.textarea {
+	resize: none;
+	height: 100px;
+}
+
+.textarea::placeholder {
+	color: #fff;
+}
+
+.date {
+	background-color: #fff;
+	padding: 10px;
+	font-family: "Poppins", monospace;
+	color: #000;
+	font-size: 18px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+
+.checkbox {
+	width: 20px;
+}
+
+.date::-webkit-calendar-picker-indicator {
+	background-color: #fff;
+	cursor: pointer;
+	border-radius: 3px;
+}
+
+.mainChange {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+}
+
+.section {
+	display: flex;
+	width: 950px;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+
+.sectionLesson {
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	margin-left: 8px;
+	border: 1px solid #d9d9d92a;
+	border-radius: 5px;
+	padding: 10px;
+	gap: 4px;
+}
+
+.modal {
+	display: flex;
+	justify-content:flex-end;
+	align-items: flex-end;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: none;
+	transform: translate(60px, -165px);
+}
+
+.modalContent {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 250px;
+	height: 150px;
+	background-color: #d9d9d92a;
+	border-radius: 20px;
+	animation: modal 3s;
+	margin-right: 25px;
+	transform: translateY(250px);
+}
+
+.textModal {
+	color: #39d405;
+	font-size: 26px;
+}
+
+@keyframes modal {
+		0% {
+				transform: translateY(100px);
+			}
+		
+		50% {
+				transform: translateY(-100px);
+		}
+		
+		100% {
+				transform: translateY(150px);
+		}
+}
+
+@media (max-width: 1120px) {
+.section {
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.sectionLesson {
+		margin-top: 10px;
+		display: flex;
+		width: 60vw;
+		flex-direction: column;
+		margin-left: 8px;
+		border: 1px solid #d9d9d92a;
+		border-radius: 5px;
+		padding: 10px;
+		gap: 4px;
+	}
+}

@@ -1,0 +1,46 @@
+.menuMain {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-left: 14px;
+	height: 89%; 
+}
+
+.menuWrapper {
+  display: flex;
+	flex-wrap: nowrap; 
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 30px;
+	height: 100%; 
+	width: 90px;
+  background-color: #d9d9d92a;
+  align-self: flex-end;
+	gap: 30px;
+}
+
+.menuHeader {
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
+	height: 90vh;
+	min-height: 520px;
+}
+
+.mainMenu {
+	display: flex;	
+	margin-top: 15px;
+	height: 60vh;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 25px;
+}
+
+.otherMenu {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
+

@@ -1,0 +1,43 @@
+
+
+.avatar {
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	transition: all .1s;
+	outline: none;
+	cursor: pointer;
+}
+
+.avatar img {
+	transform: translateX(-2px) translateY(-2px);
+	position: relative;
+	overflow: hidden;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	outline: none;
+	transition: all .1s;
+}
+
+.avatarWrappe {
+	display: flex;
+	flex-direction: row;
+}
+
+.name {
+	display: flex;
+	justify-content: center;
+	white-space: nowrap;
+	font-size: 18px;
+}
+
+.avatar img:hover {
+	outline: 3px solid #ffd000;
+	outline-offset: 5px;
+}
+
+.avatar:focus {
+	outline-offset: 5px;
+  outline: 3px solid #ffd000;
+}
