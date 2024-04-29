@@ -8,8 +8,8 @@ export const Plan = ({ num, time, title, teacher, office, homework }) => {
     const [active, setActive] = useState(false);
     const [expanded, setExpanded] = useState(false);
     const [containerHeight, setContainerHeight] = useState('70px');
-		const [mobTeacther, setMobTeacther] = useState(true)
-		const { width } = useWindowSize();
+    const [mobTeacther, setMobTeacther] = useState(true)
+    const { width } = useWindowSize();
 
     function toggleActive() {
         setActive(!active);
@@ -42,41 +42,41 @@ export const Plan = ({ num, time, title, teacher, office, homework }) => {
                         <div className={styles.num}>{num}</div>
                         <div className={styles.time}>{time}</div>
                         <div className={styles.learn}>{title}</div>
-												{width > 610 ? (<>
-													<div className={styles.containerTeacher}>
-                            <div className={styles.headerTecher}>
-                                <div className={styles.labelTeacher}>Преподователь</div>
-                                <div className={styles.hw}>
-                                    <div className={styles.titleWork}>ДЗ</div>
-                                    <Image src={checker} width={20} height={20} alt="Cheker" loading="lazy" draggable={false} />
+                        {width > 610 ? (<>
+                                <div className={styles.containerTeacher}>
+                                    <div className={styles.headerTecher}>
+                                        <div className={styles.labelTeacher}>Преподователь</div>
+                                        <div className={styles.hw}>
+                                            <div className={styles.titleWork}>ДЗ</div>
+                                            <Image src={checker} width={20} height={20} alt="Cheker" loading="lazy" draggable={false} />
+                                        </div>
+                                    </div>
+                                    <div className={styles.teacher}>{teacher}</div>
                                 </div>
-                            </div>
-                            <div className={styles.teacher}>{teacher}</div>
-                        </div>
-                        <div className={styles.office}>{office}</div>
-													</>) 
-														:
-													<div className={styles.hw}>
-                            <div className={styles.titleWork}>ДЗ</div>
+                                <div className={styles.office}>{office}</div>
+                            </>)
+                            :
+                            <div className={styles.hw}>
+                                <div className={styles.titleWork}>ДЗ</div>
                                 <Image src={checker} width={20} height={20} alt="Cheker" loading="lazy" draggable={false} />
-                          </div>}
+                            </div>}
                     </div>
                     {expanded && (
-												<>
-												{width <= 610 && (<>
-													<div className={styles.containerTeacher}>
-                            <div className={styles.headerTecher}>
-                                <div className={styles.labelTeacher}>Преподователь:</div>
-																<div className={styles.teacher}>{teacher}</div>
+                        <>
+                            {width <= 610 && (<>
+                                <div className={styles.containerTeacher}>
+                                    <div className={styles.headerTecher}>
+                                        <div className={styles.labelTeacher}>Преподователь:</div>
+                                        <div className={styles.teacher}>{teacher}</div>
+                                    </div>
+                                </div>
+                                <div className={styles.office}>{`Кабинет: ${office}`}</div>
+                            </>)}
+                            <div className={styles.moreinfo}>
+                                <div className={styles.homeworkTitle}>Домашнее задание: </div>
+                                {homework ? <div className={styles.homework}>{homework}</div> : <div className={styles.homework}>-</div>}
                             </div>
-                        </div>
-                        <div className={styles.office}>{`Кабинет: ${office}`}</div>
-													</>)}
-												<div className={styles.moreinfo}>
-                            <div className={styles.homeworkTitle}>Домашнее задание: </div>
-                            {homework ? <div className={styles.homework}>{homework}</div> : <div className={styles.homework}>-</div>}
-                        </div>
-												</>
+                        </>
                     )}
                 </div>
             </button>

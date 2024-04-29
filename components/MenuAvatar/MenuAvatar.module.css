@@ -1,23 +1,29 @@
 
 
 .avatar {
-	height: 100px;
 	width: 100px;
-	border-radius: 50%;
-	transition: all .1s;
-	outline: none;
+	height: 100px;
+
 	cursor: pointer;
+	transition: all .1s;
+
+	border-radius: 50%;
+	outline: none;
 }
 
 .avatar img {
-	transform: translateX(-2px) translateY(-2px);
 	position: relative;
+
 	overflow: hidden;
-	height: 100px;
+
 	width: 100px;
+	height: 100px;
+
+	transition: all .1s;
+	transform: translateX(-2px) translateY(-2px);
+
 	border-radius: 50%;
 	outline: none;
-	transition: all .1s;
 }
 
 .avatarWrappe {
@@ -28,7 +34,9 @@
 .name {
 	display: flex;
 	justify-content: center;
+
 	white-space: nowrap;
+
 	font-size: 18px;
 }
 
@@ -38,6 +46,6 @@
 }
 
 .avatar:focus {
-	outline-offset: 5px;
   outline: 3px solid #ffd000;
+	outline-offset: 5px;
 }

@@ -1,21 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+	reactStrictMode: true,
 	devIndicators: {
-    buildActivity: false
-  },
-		async headers() {
-			return [
+		buildActivity: false
+	},
+	async headers() {
+		return [
+			{
+				source: '/favicon.ico',
+				headers: [
 					{
-							source: '/favicon.ico',
-							headers: [
-									{
-											key: 'Content-Type',
-											value: 'image/x-icon',
-									},
-							],
+						key: 'Content-Type',
+						value: 'image/x-icon',
 					},
-			];
+				],
+			},
+		];
 	},
 };
 

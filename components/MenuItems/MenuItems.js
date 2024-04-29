@@ -11,10 +11,10 @@ export const MenuItems = ({source, name, fun}) => {
 
 	useEffect(() => {
 		switch(name) {
-			case 'Home': 
+			case 'Home':
 				setPage('/')
 				break;
-			case 'Weather': 
+			case 'Weather':
 				setPage('/weather')
 				break;
 			default:
@@ -24,14 +24,14 @@ export const MenuItems = ({source, name, fun}) => {
 	}, [router.pathname])
 
 	const handleComponent = (e) => {
-    e.preventDefault();
-    router.push(page, page, { shallow: true });
-  };
+		e.preventDefault();
+		router.push(page, page, { shallow: true });
+	};
 
 	return (
 		<>
 			<button className={styles.menuitem} onClick={handleComponent}>
-						<Image src={source} className={styles.image} width={70} height={70} priority="high" alt={`${name}`} name={name} draggable={false} onClick={fun}  />
+				<Image src={source} className={styles.image} width={70} height={70} priority="high" alt={`${name}`} name={name} draggable={false} onClick={fun}  />
 			</button>
 		</>
 	)

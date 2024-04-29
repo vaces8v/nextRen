@@ -3,28 +3,33 @@
 .mainWeather {
 	display: flex;
 	justify-content: center;
+
 	text-align: center;
 }
 
 .mainTitle {
-	font-size: 32px;
 	text-align: center;
+
+	font-size: 32px;
 }
 
 .hourlyHeader {
-	font-size: 32px;
 	text-align: center;
+
+	font-size: 32px;
 }
 
 .blockWeather {
 	display: flex;
-	justify-content: space-around;
-	flex-direction: column;
-	text-align: center;
-	height: 100%;
-	width: 100%;
-	margin-top: 30px;
 	flex: 1;
+	flex-direction: column;
+	justify-content: space-around;
+
+	width: 100%;
+	height: 100%;
+	margin-top: 30px;
+
+	text-align: center;
 }
 
 .temp {
@@ -39,12 +44,14 @@
 
 
 .description {
-	line-height: 130%;
-	font-weight: 500;
-	font-family: 'Poppins', sans-serif;
-	font-size: 18px;
 	width: 120px;
+
 	text-align: center;
+
+	font-family: Poppins, sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 130%;
 }
 
 .date {
@@ -54,43 +61,47 @@
 .itemWeather {
 	display: flex;
 	justify-content: center;
+
 	text-align: center;
-	flex: 1;
 }
 
 .fullDay {
+	display: flex;
+	overflow: hidden;
+	justify-content: space-between;
+	gap: 10px;
+
 	width: 100%;
 	height: 100%;
-	display: flex;
-	justify-content: space-between;
-	overflow-y: hidden;
-	overflow-x: auto;
 }
 
 .hourlyDay {
-	width: 100%;
-	height: 100%;
 	display: flex;
 	justify-content: space-between;
+
+	width: 100%;
+	height: 100%;
 }
 
 .hourlyWeather {
-	width: 100%;
-	height: 100%;
 	display: flex;
 	flex-direction: column;
+
+	width: 100%;
+	height: 100%;
 }
 
 .hourlyItem {
 	display: flex;
-	text-align: center;
 	flex: 1;
+
+	text-align: center;
 }
 
 
 .fullDay::-webkit-scrollbar {
-	height: 5px;
 	width: 1px;
+	height: 5px;
 }
 
 
@@ -101,5 +112,26 @@
 
 .fullDay::-webkit-scrollbar-thumb {
 	border-radius: 5px;
-	background-color: rgba(196, 193, 193, 0.63);
+	background-color: rgb(196 193 193 / 63%);
+}
+
+@media (width <= 1120px) {
+	.fullDay {
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: center;
+		align-content: center;
+		flex-direction: row;
+	}
+}
+
+@media (width <= 900px) {
+	.fullDay {
+		margin-left: 40px;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: center;
+		align-content: center;
+		flex-direction: row;
+	}
 }

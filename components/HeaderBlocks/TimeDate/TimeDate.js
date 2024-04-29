@@ -56,7 +56,7 @@ useEffect(() => {
 		<>
 			<div className={style.blockHeader}>
 				<div className={style.time}>
-            { !hour && !minute ? 'Загрузка' : `${hour}:${minute}`}
+            { !hour && !minute ? 'Загрузка...' : `${hour}:${minute}`}
 				</div>
 				<div className={style.noneLine}>---</div>
 				<div className={style.contenBlcok}>{dateCurrent}</div>

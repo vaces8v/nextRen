@@ -10,63 +10,72 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Media from 'react-media';
 import { MenuMobile } from '../Menu/MenuMobile';
+import { useWindowSize } from "../hooks/useWindowSize";
 
 export const Content = ({ children }) => {
 
 	const router = useRouter();
 	const [title, setTitle] = useState('Расписание')
+	const [menuMobileActive, setMenuMobile] = useState(false);
+	const { width } = useWindowSize();
 
 	useEffect(() => {
 		switch(router.pathname) {
 			case '/':
 				setTitle('Расписание')
-			break;
+				break;
 			case '/weather':
 				setTitle('Погода')
-			break;
+				break;
 			case '/admin':
 				setTitle('Админ панель')
-			break;
+				break;
 			case '/admin/panel':
 				setTitle('Админ панель')
-			break;
+				break;
 		}
 	}, [router.pathname])
 
-    return (
-				<>
-				<Head>
-        	<title>Ren</title>
-        	<meta name="description" content="Ren app" />
-        	<meta name="viewport" content="width=device-width, initial-scale=1" />
-					<link rel="icon" href="/favicon.ico" sizes="32x32"/>
-      	</Head>
-					<main className={styles.main}>
-      		  <div className={styles.wrapper}>
-							<div className={styles.wrapperContent}>
-      		      <div className={styles.blocksHeader}>
-      		          <div className={styles.sectLeft}>
-      		              <HeaderBlocks title={title}/>
-      		          </div>
-      		          <div className={styles.sectRight}>
-      		              <TimeDate /> <Weather />
-      		          </div>
-      		      </div>
-      		      <div className={styles.backgroundContent}>
-      		          <div className={styles.scrollBlock}>
-      		              <div className={styles.contenDays}>
-													{children}
-												</div>
-      		          </div>
-      		      </div>
-      		  </div>
-							<div>
-									<Media query={{ maxWidth: 900 }} defaultMatches>
-										{matches => (matches ? <></> : <Menu />)}
-									</Media>
+	const updateChildPropsMenu = (isActive) => {
+		setMenuMobile(isActive);
+	};
+
+	return (
+		<>
+			<Head>
+				<title>Ren</title>
+				<meta name="description" content="Ren app" />
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<link rel="icon" href="/favicon.ico" sizes="32x32"/>
+			</Head>
+			<main className={styles.main}>
+				<div className={styles.wrapper}>
+					<div className={styles.wrapperContent}>
+						<div className={styles.blocksHeader}>
+							<div className={styles.sectLeft}>
+								<HeaderBlocks title={title}/>
+							</div>
+							<div className={styles.sectRight}>
+								<TimeDate />
+								{ width && width > 610 &&  <Weather hide={menuMobileActive}/> }
+								{ width && width <= 900 && <MenuMobile menuActiveState={updateChildPropsMenu} weather={<Weather/>}/>}
 							</div>
 						</div>
-						</main>
-				</>
-    );
+						<div className={styles.backgroundContent}>
+							<div className={styles.scrollBlock}>
+								<div className={styles.contenDays}>
+									{children}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<Media query={{ maxWidth: 900 }} defaultMatches>
+							{matches => (matches ? <></> : <Menu />)}
+						</Media>
+					</div>
+				</div>
+			</main>
+		</>
+	);
 };

@@ -2,14 +2,17 @@ import React, { useEffect, useState } from 'react';
 import styles from './WeatherPage.module.css';
 import Image from 'next/image';
 import axios from 'axios';
+import { Loading } from "../Loading/Loading";
 
 export const WeatherPage = () => {
     const [weatherData, setWeatherData] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const fetchWeatherFuture = async () => {
         try {
-            const url = "http://localhost:8087/weatherpage";
+            const url = "http://192.168.240.27:8087/weatherpage";
             const data = (await axios.get(url)).data;
+            setLoading(false);
             const forecastData = data.list.slice(0, 24).map((item, index) => ({
                 temperature: item.main.temp - 273.15,
                 weather: item.weather[0].main,
@@ -21,6 +24,7 @@ export const WeatherPage = () => {
 
             setWeatherData(forecastData);
         } catch (error) {
+            setLoading(true);
             console.error('Error fetching weather data:', error);
         }
     };
@@ -81,6 +85,10 @@ export const WeatherPage = () => {
 
         return () => clearInterval(interval);
     }, []);
+
+    if (loading) {
+        return <Loading />;
+    }
 
     return (
         <>

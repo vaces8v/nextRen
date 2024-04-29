@@ -1,7 +1,8 @@
 .blockHeader {
-	padding: 20px 50px;
-	border-radius: 44px;
 	margin-bottom: 11px;
+	padding: 20px 50px;
+
+	border-radius: 44px;
 	background-color: #d9d9d92a;
 }
 
@@ -9,37 +10,41 @@
 	font-size: 24px;
 }
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
 	.blockHeader {
-		margin-right: 10px;
 		margin-top: 10px;
+		margin-right: 10px;
 	}
 }
 
-@media (max-width: 610px) {
+@media (width <= 610px) {
 	.contenBlcok {
 		font-size: 18px;
 	}
 
 	.blockHeader {
-		padding: 17px 40px;
-		border-radius: 44px;
-		margin-left: 15px;
 		margin-top: 12px;
-		border: none;
-		background-color: #d9d9d92a;
+		margin-left: 15px;
+		padding: 17px 40px;
+
 		transition: all .2s;
+
+		border: none;
+		border-radius: 44px;
+		background-color: #d9d9d92a;
 	}
 }
 
-@media (max-width: 335px) {
+@media (width <= 335px) {
 	.blockHeader {
-			padding: 17px 30px;
-			border-radius: 44px;
-			margin-left: 10px;
 			margin-top: 12px;
-			border: none;
-			background-color: #d9d9d92a;
+			margin-left: 10px;
+			padding: 17px 30px;
+
 			transition: all .2s;
+
+			border: none;
+			border-radius: 44px;
+			background-color: #d9d9d92a;
 		}
 }

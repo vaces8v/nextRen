@@ -1,7 +1,8 @@
 .menuitem {
-	background: none;
-	border: none;
 	transition: all .3s;
+
+	border: none;
+	background: none;
 }
 
 .image {

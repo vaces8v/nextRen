@@ -1,17 +1,24 @@
 .blockHeader {
 	display: flex;
-  cursor: pointer;
-	justify-content: center;
 	align-items: center;
-	text-align: center;
-	padding: 17px 25px;
-	border-radius: 44px;
+	justify-content: center;
+
 	margin-bottom: 11px;
+	padding: 17px 25px;
+
+  	cursor: pointer;
+  	transition: all .3s;
+	text-align: center;
+	opacity: 1;
 	border: none;
+	transform: scale(1);
+	border-radius: 44px;
 	background-color: #d9d9d92a;
-  transition: all .2s;
 }
 
+.blockHeader.active {
+	display: none;
+}
 
 .blockHeader:hover {
   outline: 3px solid #ffd000;
@@ -32,32 +39,45 @@
 	height: 42px;
 }
 
-@media (max-width: 900px) {
+@media (width <= 900px) {
 	.blockHeader {
-		margin-right: 10px;
 		margin-top: 10px;
+		margin-right: 10px;
+	}
+	.blockHeader:hover {
+		outline: none;
+		outline-offset: 0;
+	}
+
+	.blockHeader:focus {
+		outline: none;
+		outline-offset: 0;
 	}
 }
 
-@media (max-width: 610px) {
+@media (width <= 610px) {
 	.contenBlcok {
 		font-size: 18px;
 	}
+
 	.img {
 		width: 30px;
 		height: 30px;
 	}
+
 	.blockHeader {
-		padding: 17px 25px;
-		border-radius: 44px;
 		margin-bottom: 3px;
-		border: none;
-		background-color: #d9d9d92a;
+		padding: 17px 25px;
+
 		transition: all .2s;
+
+		border: none;
+		border-radius: 44px;
+		background-color: #d9d9d92a;
 	}
 }
 
-@media (max-width: 300px) {
+@media (width <= 300px) {
 	.blockHeader {
 		margin-right: 10px;
 		}

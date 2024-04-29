@@ -7,7 +7,7 @@ import { Plan } from './../Plan/Plan';
 
 export const Day = ({ day }) => {
     const [dayOfWeek, setDayOfWeek] = useState('');
-		const [formattedDate, setFormattedDate] = useState('');
+    const [formattedDate, setFormattedDate] = useState('');
 
     useEffect(() => {
         switch (new Date(day.date).getDay()) {
@@ -24,7 +24,7 @@ export const Day = ({ day }) => {
         setFormattedDate(formattedDateString);
     }, [day.date]);
 
-		const allLessonsAreNotImportant = day.lessons.every((lesson) => !lesson[0].importance);
+    const allLessonsAreNotImportant = day.lessons.every((lesson) => !lesson[0].importance);
 
     if (allLessonsAreNotImportant) {
         return null;
@@ -40,8 +40,8 @@ export const Day = ({ day }) => {
             <div className={styles.styleMain}>
                 <div className={styles.schedule}>
                     {day.lessons.map((lesson, index) => (
-											lesson[0].importance &&
-  											(<Plan
+                        lesson[0].importance &&
+                        (<Plan
                             key={index}
                             num={lesson[0].num}
                             time={lesson[0].time}
@@ -53,7 +53,7 @@ export const Day = ({ day }) => {
                     ))}
                 </div>
             </div>
-            
+
         </div>
     );
 };
